@@ -1,30 +1,57 @@
-function removeLast() {
-  const s1 = document.getElementById("s1").value;
-  const s2 = document.getElementById("s2").value;
-  const resultDiv = document.getElementById("result");
+document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
 
-  if (s1.trim() === "" || s2.trim() === "") {
-    resultDiv.innerHTML = "Будь ласка, введіть обидва рядки!";
-    return;
-  }
+    // Створюємо контейнер
+    const container = document.createElement("div");
+    container.className = "container";
 
-  // Знаходимо останнє входження s2 у s1
-  const index = s1.lastIndexOf(s2);
+    // Поле вводу
+    const input = document.createElement("input");
+    input.placeholder = "Введіть питання...";
 
-  if (index === -1) {
-    // Якщо збігів немає — повертаємо рядок без змін
-    resultDiv.innerHTML = `
-      <b>У рядку S1 немає підрядка "${s2}".</b><br>
-      Результат: ${s1}
-    `;
-  } else {
-    // Видаляємо останнє входження s2
-    const newString = s1.slice(0, index) + s1.slice(index + s2.length);
+    // Кнопка
+    const btn = document.createElement("button");
+    btn.textContent = "Запитати кулю";
 
-    resultDiv.innerHTML = `
-      <b>Початковий рядок S1:</b> ${s1}<br>
-      <b>Підрядок S2:</b> ${s2}<br><br>
-      <b>Результат:</b> ${newString}
-    `;
-  }
-}
+    // Куля
+    const ball = document.createElement("div");
+    ball.className = "ball";
+
+    const answer = document.createElement("div");
+    answer.className = "answer";
+    answer.textContent = "—"; // порожня відповідь
+
+    ball.appendChild(answer);
+
+    container.appendChild(input);
+    container.appendChild(btn);
+    container.appendChild(ball);
+    body.appendChild(container);
+
+    // Українські відповіді
+    const answers = [
+        "Так",
+        "Ні",
+        "Можливо",
+        "Схоже на те",
+        "Сумніваюсь",
+        "Запитай пізніше",
+        "Безперечно",
+        "Однозначно ні",
+        "Ймовірність висока",
+        "Мало шансів"
+    ];
+
+    // Обробка кліку
+    btn.addEventListener("click", () => {
+        const question = input.value.trim();
+
+        if (question.length < 3) {
+            answer.textContent = "Потрібне коректне питання!";
+            return;
+        }
+
+        const random = Math.floor(Math.random() * answers.length);
+        answer.textContent = answers[random];
+    });
+});
