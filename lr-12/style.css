@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #eef3ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    margin: 20px auto;
+}
+
+.difficulty-levels {
+    margin-bottom: 20px;
+}
+
+.levels {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.level-btn {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.level-btn[data-level="easy"] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.level-btn[data-level="medium"] {
+    background-color: #FFC107;
+    color: black;
+}
+
+.level-btn[data-level="hard"] {
+    background-color: #F44336;
+    color: white;
+}
+
+.level-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.restart-btn {
+    background-color: #607D8B ;
+    margin-top: 15px ;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.stats span {
+    display: inline-block;
+    margin: 5px;
+}
+
+.card {
+    background: #4f67ff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 22px;
+    user-select: none;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    background: #4f67ff;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #9da6ff;
+    cursor: not-allowed;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    margin: 20% auto;
+    border-radius: 8px;
+    text-align: center;
+}
