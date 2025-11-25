@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Вивчення слів</h1>
+
+    <div class="stats">
+        <span id="step">Крок: 0/10</span>
+        <span id="correct">Вірно: 0</span>
+        <span id="wrong">Невірно: 0</span>
+    </div>
+
+    <div id="card" class="card">Натисніть для старту</div>
+
+    <input type="text" id="inputWord" placeholder="Введіть переклад..." disabled>
+
+    <button id="checkBtn" disabled>Перевірити</button>
+</div>
+
+<!-- Модальне вікно -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h2>Ваш результат</h2>
+        <p id="resultText"></p>
+        <button id="closeModal">Закрити</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
