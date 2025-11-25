@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Гра 21 — Користувач vs Комп'ютер</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Гра «21»</h1>
+      <p class="subtitle">3 раунди — хто набере більше очок</p>
+    </header>
+
+    <section class="scoreboard">
+      <div class="player user">
+        <div class="label">Користувач</div>
+        <div class="name" id="userName">—</div>
+        <div class="score" id="userScore">0</div>
+      </div>
+
+      <div class="center-panel">
+        <div class="round">Раунд <span id="roundNumber">0</span> з 3</div>
+        <button id="generateBtn" class="btn primary">Згенерувати карти</button>
+        <button id="nextBtn" class="btn" disabled>Наступний</button>
+        <button id="resetBtn" class="btn ghost">Почати заново</button>
+        <div class="result" id="roundResult" aria-live="polite"></div>
+      </div>
+
+      <div class="player computer">
+        <div class="label">Комп'ютер</div>
+        <div class="name">—</div>
+        <div class="score" id="computerScore">0</div>
+      </div>
+    </section>
+
+    <section class="cards-area">
+      <div class="cards-column">
+        <div class="cards-title">Карта користувача</div>
+        <div class="card-slot" id="userCard" aria-hidden="true"></div>
+      </div>
+
+      <div class="cards-column">
+        <div class="cards-title">Карта комп'ютера</div>
+        <div class="card-slot" id="computerCard" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="final" id="finalPanel" hidden>
+      <h2 id="finalText"></h2>
+      <p id="finalSummary"></p>
+    </section>
+
+    <footer class="footer">
+      <small>Лабораторна робота №9 — маніпулювання стилями через JavaScript</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
