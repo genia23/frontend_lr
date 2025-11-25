@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Однорукий бандит</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Однорукий бандит</h1>
+    <p id="hello" class="subtitle">Ласкаво просимо!</p>
+
+    <div class="attempts">Спроби: <span id="attemptsLeft">3</span>/3</div>
+
+    <button id="generate" class="btn">Спін</button>
+
+    <div class="slot-wrapper">
+      <div class="slot" data-col="0">
+        <div class="reel"></div>
+      </div>
+      <div class="slot" data-col="1">
+        <div class="reel"></div>
+      </div>
+      <div class="slot" data-col="2">
+        <div class="reel"></div>
+      </div>
+
+      <!-- grid overlay for cells (3x3) -->
+      <div class="grid">
+        <div class="cell" data-row="0" data-col="0"></div>
+        <div class="cell" data-row="0" data-col="1"></div>
+        <div class="cell" data-row="0" data-col="2"></div>
+
+        <div class="cell" data-row="1" data-col="0"></div>
+        <div class="cell" data-row="1" data-col="1"></div>
+        <div class="cell" data-row="1" data-col="2"></div>
+
+        <div class="cell" data-row="2" data-col="0"></div>
+        <div class="cell" data-row="2" data-col="1"></div>
+        <div class="cell" data-row="2" data-col="2"></div>
+      </div>
+
+      <!-- SVG for animated winning lines -->
+      <svg class="lines" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true">
+        <!-- 3 horizontals -->
+        <line id="line-row-0" x1="10" y1="50" x2="290" y2="50" />
+        <line id="line-row-1" x1="10" y1="150" x2="290" y2="150" />
+        <line id="line-row-2" x1="10" y1="250" x2="290" y2="250" />
+        <!-- diagonals -->
+        <line id="line-diag-1" x1="10" y1="10" x2="290" y2="290" />
+        <line id="line-diag-2" x1="290" y1="10" x2="10" y2="290" />
+      </svg>
+    </div>
+
+    <div id="message" class="message"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
